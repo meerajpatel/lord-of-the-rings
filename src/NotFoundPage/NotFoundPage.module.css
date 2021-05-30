@@ -1,0 +1,25 @@
+.NotFoundPage {
+  background-color: white;
+  flex: 1;
+  display: flex;
+}
+
+.NotFoundIllustrationContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NotFoundIllustration {
+  width: 60%;
+  height: 60%;
+}
+
+.NotFoundText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}

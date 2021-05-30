@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { AppNavBar } from "./AppNavBar";
+import { RouteHandler } from "./RouteHandler";
 
-function App() {
+const App = () => {
+  const [currentMenu, setCurrentMenu] = useState("home");
+  useEffect(() => {
+    setCurrentMenu(window.location.pathname.split("/")[1]);
+  }, []);
+
+  const handleMenu = (e) => {
+    setCurrentMenu(e.key);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {AppNavBar(handleMenu, currentMenu)}
+      <div style={{padding: 20}}>{RouteHandler}</div>
+    </Router>
   );
 }
 
 export default App;
+
+
