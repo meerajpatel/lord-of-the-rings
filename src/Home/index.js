@@ -1,8 +1,10 @@
+import { React } from 'react';
+import lotr from './lotr.jpg'
+
 const Home = () => {
     return (
         <>
-            HELLO LOTR FANS
-            {/* <Redirect to="" /> */}
+            <img src={lotr} alt="Logo" height="100%" width="100%" />
         </>
     );
 }

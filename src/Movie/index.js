@@ -13,8 +13,6 @@ const Movie = (props) => {
     const [form] = Form.useForm();
 
     useEffect(() => {
-        console.log(queryString.parse(props.location.search));
-
         if (props.location.search === "") {
             props.history.push({
                 pathname: props.location.pathname,
@@ -28,6 +26,26 @@ const Movie = (props) => {
             if (!parsed.page) {
                 parsed.page = 1;
             }
+            if (parsed.name && parsed.name.length > 3) {
+                form.setFieldsValue({
+                    name: parsed.name.substring(1, parsed.name.length - 2),
+                });
+            }
+            if (parsed["budgetInMillions<"]) {
+                form.setFieldsValue({
+                    budgetInMillions: Number(parsed["budgetInMillions<"]),
+                });
+            }
+            if (parsed["academyAwardWins>"]) {
+                form.setFieldsValue({
+                    academyAwardWins: Number(parsed["academyAwardWins>"]),
+                });
+            }
+            if (parsed["runtimeInMinutes>"]) {
+                form.setFieldsValue({
+                    runtimeInMinutes: Number(parsed["runtimeInMinutes>"]),
+                });
+            }
             const query = "?" + queryString.stringify(parsed);
             setMovieDataLoading(true)
             makeAxiosRequest("get", `movie${query}`, {}).then((resp) => {
@@ -40,13 +58,16 @@ const Movie = (props) => {
             });
         }
 
-    }, [props.location.search]);
+    }, [props.location.search, pageSizeValue, props.location.pathname]);
 
     const config = [
         {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
+            render: (name, record, index) => {
+                return <a onClick={() => props.history.push(`/movie/${record._id}`)}>{name}</a>
+            },
         },
         {
             title: 'Academy Award Nominations',
@@ -137,6 +158,10 @@ const Movie = (props) => {
         });
     }
 
+    const onReset = () => {
+        form.resetFields();
+    }
+
     return (
         <>
             <div style={{ display: 'flex', marginTop: 20 }}>
@@ -163,6 +188,7 @@ const Movie = (props) => {
                         </Form.Item>
                         <Form.Item>
                             <Button htmlType="submit" type="primary">Submit</Button>
+                            <Button htmlType="submit" onClick={onReset}>Reset</Button>
                         </Form.Item>
                     </div>
                 </Form>
