@@ -1,10 +1,10 @@
 import { React } from 'react';
-import lotr from './lotr.jpg'
+// import lotr from './lotr.jpg'
 
 const Home = () => {
     return (
         <>
-            <img src={lotr} alt="Logo" height="100%" width="100%" />
+            {/* <img src={lotr} alt="Logo" height="100%" width="100%" /> */}
         </>
     );
 }
