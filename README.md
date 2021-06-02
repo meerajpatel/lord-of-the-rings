@@ -40,7 +40,7 @@ https://lotr-ecto.herokuapp.com/home
 5.  Created main components and its internal components to handle details, as well as fetching quotes for particular Movie etc.
 6.  There are **16 Routes** in this Application.
 
-### Assumptions and Outputs
+### Outputs and few assumptions
 
 1. Characters page -> gender filter -> use text box with ignore case and string match, instead of dropdown as data is corrupted. There is "Male" as well as "male"
 2. Tried to use as few modules and dependencies.
@@ -52,6 +52,7 @@ https://lotr-ecto.herokuapp.com/home
 8. All the chapters related to a particular book can be opened after opening bookdetail page
 9. All the quotes related to movie and character can be opened by opening moviedetail or characterdetail page. 
 For eg: characterquotes for a character from :https://lotr-ecto.herokuapp.com/character/5cd99d4bde30eff6ebccfe9e
+10. Added multiple filters to support filtering functionalites on each page.
 
 ### Improvements
 
