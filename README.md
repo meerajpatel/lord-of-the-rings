@@ -57,8 +57,8 @@ For eg: characterquotes for a character from :https://lotr-ecto.herokuapp.com/ch
 ### Improvements
 
 1. Can introduce Redux to handle State. For eg: Movies and Books can be prefetched and can be stored into redux. We can skip unnecessary API hits by using this. Even on quotes page movie id can be linked with movies prefetched in the state, and can be shown on the page. However that page wont be able to filter movies just based on name, we have to pass filter param as ID. So some work can be done around that area.
-2. Haven't introduced sort in quotes and character page. It can be introduced by adding new filter or table level sorting.
+2. Haven't introduced sort in quotes and character page. It can be introduced by adding new filter or table level sorting. Can include more filters.
 3. For any detail page (book-detail, movie-detail, quote-detail, character-detail, chapter-detail), instead of hitting an api we can use the values from the previous page table.
 4. Can improve on bundle sizes as well by introducing webpack optimizations.
-5. Can introduce Styled Components to handle css. Instead of using Inline CSS.
+6. Can introduce Styled Components to handle css. Instead of using Inline CSS.
 
