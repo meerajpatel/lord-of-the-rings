@@ -61,4 +61,5 @@ For eg: characterquotes for a character from :https://lotr-ecto.herokuapp.com/ch
 3. For any detail page (book-detail, movie-detail, quote-detail, character-detail, chapter-detail), instead of hitting an api we can use the values from the previous page table.
 4. Can improve on bundle sizes as well by introducing webpack optimizations.
 5. Can introduce Styled Components to handle css. Instead of using Inline CSS.
+6. Can move out the API Auth key from common config - axios.js file to properties file.
 
