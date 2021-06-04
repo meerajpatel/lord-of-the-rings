@@ -14,6 +14,7 @@ relies on React.
 LOTR API: https://the-one-api.herokuapp.com/
 
 ### Solution Live Url
+https://lotr-ecto.netlify.app/home
 https://lotr-ecto.herokuapp.com/home
 
 ### How to run in local machine
